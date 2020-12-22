@@ -206,7 +206,7 @@ if simulation:
     # On affiche des jauges pour modifier le montant des critères impactant la décision
     EXT_SOURCE_2 = st.slider('EXT_SOURCE_2', float(0),float(0),float(1),0.1) # syntaxe : st.slider('x', valeur minimale, valeur maximale, incrémentations)
     EXT_SOURCE_3 = st.slider('EXT_SOURCE_3', float(0),float(0),float(1),0.1)
-    EXT_SOURCE_1 = st.slider('EXT_SOURCE_1', 0,500,100000,100)
+    EXT_SOURCE_1 = st.slider('EXT_SOURCE_1', float(0),float(0),float(1),0.1)
     DAYS_ID_PUBLISH = st.slider('DAYS_ID_PUBLISH', 0,0,1825,5)
     EXT_SOURCES_PROD = st.slider('EXT_SOURCES_PROD', float(0),float(0),float(3),0.1)
     DAYS_REGISTRATION = st.slider('DAYS_REGISTRATION', 0,0,1825,5)
