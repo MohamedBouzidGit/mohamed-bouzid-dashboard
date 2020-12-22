@@ -43,12 +43,12 @@ def transform_raw_data(path):
 
 # Fct de chargement du CSV nettoyé en enlevant la colonne 'TARGET'
 def load_app_train_clean():
-    app_train_clean = pd.read_csv('https://github.com/MohamedBouzidGit/mohamed-bouzid-dashboard/blob/master/app_train_clean_30000.csv', sep=',', index_col=0)
+    app_train_clean = pd.read_csv('https://media.githubusercontent.com/media/MohamedBouzidGit/mohamed-bouzid-dashboard/master/app_train_clean_30000.csv', sep=',', index_col=0)
     return app_train_clean.drop('TARGET', axis=1)
 
 
 # Appel à la fct de chargement du CSV infos clients (via données brutes)
-infos = transform_raw_data('https://github.com/MohamedBouzidGit/mohamed-bouzid-dashboard/blob/master/application_train.csv')
+infos = transform_raw_data('https://media.githubusercontent.com/media/MohamedBouzidGit/mohamed-bouzid-dashboard/master/application_train.csv')
 
 # Appel à la fct de chargement du CSV nettoyé
 data_processed = load_app_train_clean()
@@ -60,7 +60,7 @@ data_processed['DAYS_REGISTRATION'] = (data_processed['DAYS_REGISTRATION'] * -1)
 
 
 # Chargement d'un CSV avec données moyennes pour chaque target
-moyennes_tmp = pd.read_csv('https://github.com/MohamedBouzidGit/mohamed-bouzid-dashboard/blob/master/app_train_clean_30000.csv', sep=',', index_col=0)
+moyennes_tmp = pd.read_csv('https://media.githubusercontent.com/media/MohamedBouzidGit/mohamed-bouzid-dashboard/master/app_train_clean_30000.csv', sep=',', index_col=0)
 moyennes_tmp2 = moyennes_tmp[['TARGET', 'EXT_SOURCE_2', 'EXT_SOURCE_3', 'EXT_SOURCE_1', 'DAYS_ID_PUBLISH', 'EXT_SOURCES_PROD', 'DAYS_REGISTRATION']]
 
 # On change les valeurs négatives en valeurs positives
