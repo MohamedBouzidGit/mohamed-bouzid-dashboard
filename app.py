@@ -11,9 +11,10 @@ from sklearn.neighbors import KDTree
 from sklearn.tree import DecisionTreeClassifier
 
 # Fct de chargement des infos clients (en réorganisant les colonnes et en convertissant certaines unités)
+n_rows=1000
 def transform_raw_data(path):
 
-    raw_data = pd.read_csv(path, sep=',', index_col='SK_ID_CURR')
+    raw_data = pd.read_csv(path, sep=',', nrows=n_rows, index_col='SK_ID_CURR')
 
     raw_data['DAYS_EMPLOYED'].replace({365243: np.nan}, inplace = True)
     raw_data = raw_data[raw_data['CODE_GENDER'] != 'XNA']
@@ -43,7 +44,7 @@ def transform_raw_data(path):
 
 # Fct de chargement du CSV nettoyé en enlevant la colonne 'TARGET'
 def load_app_train_clean():
-    app_train_clean = pd.read_csv('https://media.githubusercontent.com/media/MohamedBouzidGit/mohamed-bouzid-dashboard/master/app_train_clean_30000.csv', sep=',', index_col=0)
+    app_train_clean = pd.read_csv('https://media.githubusercontent.com/media/MohamedBouzidGit/mohamed-bouzid-dashboard/master/app_train_clean_30000.csv', sep=',', nrows=n_rows, index_col=0)
     return app_train_clean.drop('TARGET', axis=1)
 
 
