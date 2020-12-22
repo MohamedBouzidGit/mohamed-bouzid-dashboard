@@ -1,6 +1,7 @@
 ## Application web pour la société fictive "Prêt à dépenser"
 
 ### Lien vers l'application web : 
+https://mohamed-bouzid-dashboard.herokuapp.com/
 
 ### Descriptif :
 - Partie gauche : généralités concernant le client
